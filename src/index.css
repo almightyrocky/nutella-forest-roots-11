@@ -1,0 +1,108 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 100% 95%; /* ivory */
+    --foreground: 25 75% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 75% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 75% 20%;
+
+    --primary: 25 75% 20%; /* dark brown - nutella jar */
+    --primary-foreground: 60 100% 95%;
+
+    --secondary: 25 60% 40%; /* medium brown */
+    --secondary-foreground: 60 100% 95%;
+
+    --muted: 60 55% 95%;
+    --muted-foreground: 25 30% 40%;
+
+    --accent: 30 60% 35%; /* hazelnut color */
+    --accent-foreground: 60 100% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 100% 95%;
+
+    --border: 25 35% 45%;
+    --input: 25 35% 45%;
+    --ring: 25 75% 20%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 25 75% 20%;
+    --sidebar-foreground: 60 100% 90%;
+    --sidebar-primary: 30 60% 35%;
+    --sidebar-primary-foreground: 60 100% 95%;
+    --sidebar-accent: 25 50% 30%;
+    --sidebar-accent-foreground: 60 100% 95%;
+    --sidebar-border: 25 50% 30%;
+    --sidebar-ring: 30 60% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-ivory text-nutella-dark;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-nutella;
+  }
+}
+
+@layer components {
+  .btn-nutella {
+    @apply bg-nutella hover:bg-nutella-dark text-white transition-colors;
+  }
+  
+  .btn-hazelnut {
+    @apply bg-hazelnut hover:bg-hazelnut-light text-white transition-colors;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .tree-icon {
+    @apply text-nutella w-6 h-6;
+  }
+  
+  /* Nuovi stili per migliorare visibilità */
+  .login-btn {
+    @apply bg-nutella-dark text-white hover:bg-nutella font-medium border-2 border-white shadow-md;
+  }
+  
+  .logout-btn {
+    @apply bg-white text-nutella-dark border-2 border-nutella hover:bg-nutella hover:text-white font-medium shadow-md;
+  }
+  
+  /* Animazione per i frutti */
+  @keyframes fruit-appear {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    60% {
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .fruit-animation {
+    animation: fruit-appear 0.6s ease-out forwards;
+  }
+}
